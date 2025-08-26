@@ -1,0 +1,55 @@
+{
+  "detection": {
+    "confidence_threshold": 0.5,
+    "detection_interval": 2.0,
+    "camera_resolution": [640, 480],
+    "target_classes": ["person", "cat", "dog"],
+    "model_path": "/opt/disaster-detection/models/yolov5n.pt"
+  },
+  "communication": {
+    "emergency_contacts": [
+      "+639123456789",
+      "+639987654321"
+    ],
+    "sms_cooldown": 300,
+    "gps_timeout": 30,
+    "serial_port": "/dev/ttyUSB2",
+    "serial_baudrate": 115200,
+    "apn_settings": {
+      "apn": "internet",
+      "username": "",
+      "password": ""
+    }
+  },
+  "evacuation_sites": {
+    "primary": {
+      "name": "Naga City GSIS Gym",
+      "address": "Magsaysay Avenue, Naga City, Camarines Sur",
+      "coordinates": [13.6218, 123.1945]
+    },
+    "secondary": {
+      "name": "Naga City Hall",
+      "address": "City Hall Complex, Naga City",
+      "coordinates": [13.6192, 123.1956]
+    }
+  },
+  "logging": {
+    "log_level": "INFO",
+    "log_file": "/var/log/disaster-detection/system.log",
+    "detection_log": "/opt/disaster-detection/logs/detections.txt",
+    "max_log_size": "10MB",
+    "backup_count": 5
+  },
+  "firebase": {
+    "enabled": false,
+    "project_id": "your-project-id",
+    "collection": "detections",
+    "credentials_file": "/opt/disaster-detection/config/firebase-credentials.json"
+  },
+  "system": {
+    "auto_restart": true,
+    "max_restart_attempts": 5,
+    "health_check_interval": 60,
+    "low_battery_threshold": 20
+  }
+}
